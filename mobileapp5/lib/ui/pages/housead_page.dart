@@ -5,8 +5,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 //import 'dart:io';
-import '/services/house_service.dart'; // Import the HouseService
-import '/models/house_model.dart'; // Import the HouseModel
+import '/services/house_service.dart'; 
+import '/models/house_model.dart'; 
 //import 'addimage.dart';
 import 'ad_page.dart';
 
@@ -20,7 +20,7 @@ class HouseAdPage extends StatefulWidget {
 }
 
 class _HousePageState extends State<HouseAdPage> {
-  String selectedAdType = ''; // 'Sale' or 'Rent'
+  String selectedAdType = ''; 
   int bedrooms = 0;
   int bathrooms = 0;
   int kitchens = 0;
@@ -41,10 +41,9 @@ class _HousePageState extends State<HouseAdPage> {
   void initState() {
     super.initState();
 
-    // Check if initialHouse is provided
+   
     if (widget.initialHouse != null) {
-      // Populate the fields with initial values
-      // You might need to handle different types of fields based on your HouseModel
+      
       setState(() {
         selectedAdType = widget.initialHouse!.adType;
         bedrooms = widget.initialHouse!.bedrooms;
@@ -308,7 +307,7 @@ class _HousePageState extends State<HouseAdPage> {
                 hintText: 'Enter per month price',
               ),
               enabled:
-                  selectedAdType != 'Sale', // Disable if property is for sale
+                  selectedAdType != 'Sale', 
             ),
             SizedBox(height: 16),
 
@@ -406,15 +405,15 @@ class _HousePageState extends State<HouseAdPage> {
   }
 
   void postHouseData() async {
-    List<String> uploadedImageUrls = []; // Move this line inside the method
+    List<String> uploadedImageUrls = []; 
 
-    // Upload images to Firebase Storage and get their URLs
+    
     for (XFile imageFile in selectedImages) {
       String imageUrl = await _uploadImageToStorage(imageFile);
       uploadedImageUrls.add(imageUrl);
     }
 
-    // Update HouseModel with image URLs
+   
     HouseModel newHouse = HouseModel(
       adType: selectedAdType,
       bedrooms: bedrooms,
@@ -428,11 +427,11 @@ class _HousePageState extends State<HouseAdPage> {
       totalPrice: totalPrice,
       perMonthPrice: perMonthPrice,
       description: description,
-      imageUrls: uploadedImageUrls, // Assign uploadedImageUrls here
+      imageUrls: uploadedImageUrls, 
       id: '',
     );
 
-    // Display success message
+   
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('House Ad Posted Successfully'),
@@ -440,11 +439,11 @@ class _HousePageState extends State<HouseAdPage> {
       ),
     );
 
-    // Save the house data to the database
+    
     String houseId = await _houseService.createHouse(newHouse);
     print('House added with ID: $houseId');
 
-    // Navigate to ad_page.dart
+   
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => Ad()),
@@ -455,13 +454,13 @@ class _HousePageState extends State<HouseAdPage> {
     String uniqueId = DateTime.now().millisecondsSinceEpoch.toString();
     Reference storageReference = _storage.ref().child('images/$uniqueId.jpg');
 
-    // Read the content of the image file as bytes
+   
     List<int> imageBytes = await imageFile.readAsBytes();
 
-    // Upload the bytes to Firebase Storage
+   
     await storageReference.putData(Uint8List.fromList(imageBytes));
 
-    // Get the download URL of the uploaded image
+   
     String imageUrl = await storageReference.getDownloadURL();
     return imageUrl;
   }

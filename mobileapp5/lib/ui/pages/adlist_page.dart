@@ -37,7 +37,7 @@ class _AdListState extends State<AdList> {
     },
   ),
   builder: (context, snapshot) {
-    print("Snapshot: $snapshot"); // Add this line for debugging
+    print("Snapshot: $snapshot"); 
 
     if (snapshot.hasError) {
       return Center(
@@ -52,7 +52,7 @@ class _AdListState extends State<AdList> {
     }
 
     List<dynamic>? ads = snapshot.data;
-    print("Ads: $ads"); // Add this line for debugging
+    print("Ads: $ads"); 
 
     if (ads == null || ads.isEmpty) {
       return Center(
@@ -162,8 +162,7 @@ class _AdListState extends State<AdList> {
                 if (ad is HouseModel) {
                   await _houseService.deleteHouse(ad.id);
                 } else if (ad is LandModel) {
-                  // Delete the land ad
-                  // Example: await _landService.deleteLand(ad.id);
+                  
                   await _landService.deleteLand(ad.id);
                 }
                 Navigator.pop(context);

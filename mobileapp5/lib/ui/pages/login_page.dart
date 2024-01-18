@@ -21,7 +21,7 @@ class _LoginState extends State<Login1> {
         password: _passwordController.text,
       );
 
-      // User logged in successfully
+      
       print('User logged in: ${userCredential.user?.email}');
 
       // Navigate to the desired page after login
@@ -52,8 +52,8 @@ class _LoginState extends State<Login1> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Colors.white, // Starting color
-                    Color.fromARGB(242, 16, 170, 170), // Ending color
+                    Colors.white, 
+                    Color.fromARGB(242, 16, 170, 170),
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,

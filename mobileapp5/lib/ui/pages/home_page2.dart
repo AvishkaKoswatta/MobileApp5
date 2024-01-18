@@ -27,13 +27,13 @@ class _HomePage2State extends State<HomePage2> {
   right: 10,
   bottom: 200,
   child: ClipPath(
-    clipper: WaveClipper(), // Custom clipper for the wave effect
+    clipper: WaveClipper(), 
     child: Container(
       decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Colors.white, // Starting color
-                    Color.fromARGB(242, 16, 170, 170), // Ending color
+                    Colors.white, 
+                    Color.fromARGB(242, 16, 170, 170), 
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -57,7 +57,7 @@ class _HomePage2State extends State<HomePage2> {
 ),
           
           Positioned(
-            top: 340, // Adjust this value based on your needs
+            top: 340, 
             left: 4,
             right: 4,
             child: Center(
@@ -150,30 +150,30 @@ Positioned(
             ),
           ),
 
-          // Recommended properties list
+          
           Positioned(
-            top: 460, // Adjust this value based on your needs
+            top: 460, 
             left: 0,
             right: 0,
             child: Container(
-              height: 150, // Adjust this value based on your needs
+              height: 150,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
                     PropertyCard(
-                      image: 'lib/images/property1.jpg', // Replace with your image path
+                      image: 'lib/images/property1.jpg', 
                       price: '\$',
                     ),
                     PropertyCard(
-                      image: 'lib/images/property2.jpg', // Replace with your image path
+                      image: 'lib/images/property2.jpg', 
                       price: '\$',
                     ),
                     PropertyCard(
-                      image: 'lib/images/property3.jpg', // Replace with your image path
+                      image: 'lib/images/property3.jpg', 
                       price: '\$',
                     ),
-                    // Add more PropertyCard widgets as needed
+                   
                   ],
                 ),
               ),
@@ -196,7 +196,7 @@ Positioned(
           setState(() {
             _currentPageIndex = 0;
           });
-          // Navigate to the corresponding page
+          
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => HomePage2()),
@@ -257,11 +257,11 @@ class PropertyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 8.0),
-      width: 200, // Adjust this value based on your needs
-      height: 150, // Adjust this value based on your needs
+      width: 200, 
+      height: 150, 
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
-        color: Colors.blue, // Add your property card design here
+        color: Colors.blue, 
         image: DecorationImage(
           image: AssetImage(image),
           fit: BoxFit.cover,

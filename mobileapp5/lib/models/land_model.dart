@@ -1,11 +1,11 @@
 class LandModel {
-  String id; // Add an ID field to uniquely identify each house
+  String id; 
   final String propertyAddress;
   final double distanceToMainRoad;
   final double landSize;
   final double totalPrice;
   final String description;
-  List<String> imageUrls; // Store URLs of images in Firebase Storage
+  List<String> imageUrls; 
 
   LandModel({
     required this.id,

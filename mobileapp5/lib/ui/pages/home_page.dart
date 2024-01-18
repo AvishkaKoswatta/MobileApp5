@@ -42,7 +42,7 @@ class _MainPageState extends State<HomePage> {
               child: Text(
                 'Get Started',
                 style: TextStyle(
-                  color: Colors.white, // Change the text color
+                  color: Colors.white, 
                 ),
               ),
             ),

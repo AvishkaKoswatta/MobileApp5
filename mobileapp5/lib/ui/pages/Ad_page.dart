@@ -17,7 +17,7 @@ class Ad extends StatefulWidget {
 
 class _AdState extends State<Ad> {
   int _currentPageIndex = 1;
-  //bool _showSignUpButton = true;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -108,8 +108,8 @@ class _AdState extends State<Ad> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Colors.white, // Starting color
-                    Color.fromARGB(242, 16, 170, 170), // Ending color
+                    Colors.white, 
+                    Color.fromARGB(242, 16, 170, 170), 
                   ],
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,

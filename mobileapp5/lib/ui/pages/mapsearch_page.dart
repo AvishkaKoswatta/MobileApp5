@@ -10,7 +10,7 @@ class MapSearch extends StatefulWidget {
 
 class _SearchState extends State<MapSearch> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  bool isLocationSelected = true; // Track the selected button
+  bool isLocationSelected = true; 
 
   @override
   void initState() {
@@ -33,7 +33,7 @@ class _SearchState extends State<MapSearch> with SingleTickerProviderStateMixin 
       body: Stack(
         children: [
           Positioned(
-            top: 25, // Adjust this value based on your needs
+            top: 25, 
             left: 4,
             right: 4,
             child: Center(

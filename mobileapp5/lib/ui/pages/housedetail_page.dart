@@ -17,7 +17,7 @@ class HouseDetailsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 200, // Adjust the height as needed
+              height: 200, 
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: houseDetails.imageUrls.length,

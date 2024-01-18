@@ -16,23 +16,21 @@ class _AddImageState extends State<AddImage> {
   final ImagePicker _picker = ImagePicker();
 
   Future<void> _uploadImage() async {
-    // Get an image from the device using the image_picker package
+    
     final XFile? pickedImage =
         await _picker.pickImage(source: ImageSource.gallery);
 
     if (pickedImage == null) return;
 
-    // Generate a unique ID for the image
+   
     String uniqueId = DateTime.now().millisecondsSinceEpoch.toString();
 
-    // Create a reference to the Firebase Storage path
+   
     Reference storageReference = _storage.ref().child('images/$uniqueId.jpg');
 
-    // Upload the image to Firebase Storage
+   
     await storageReference.putFile(File(pickedImage.path));
 
-    // You can now save the uniqueId or the download URL in your database
-    // or use it as needed in your application.
   }
 
   @override

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '/models/house_model.dart';
-import '/models/land_model.dart'; // Assuming you have a LandModel
+import '/models/land_model.dart'; 
 
 class ReadAd extends StatelessWidget {
-  final dynamic ad; // Use dynamic to accept both HouseModel and LandModel
+  final dynamic ad; 
 
   ReadAd({required this.ad});
 
@@ -20,7 +20,7 @@ class ReadAd extends StatelessWidget {
           children: [
            // Text('Ad Type: ${ad.adType}'),
             if (ad is HouseModel) ...{
-              // Additional fields specific to HouseModel
+              
               Text('Ad Type: ${ad.adType}'),
             Text('Bedrooms: ${ad.bedrooms}'),
             Text('Bathrooms: ${ad.bathrooms}'),
@@ -34,9 +34,9 @@ class ReadAd extends StatelessWidget {
             Text('Description: ${ad.description}'),
             },
             if (ad is LandModel) ...{
-              // Additional fields specific to LandModel
+             
               Text('Land Size: ${ad.landSize}'),
-              // Add other fields specific to LandModel
+             
             },
              Text('Distance to main road: ${ad.distanceToMainRoad}'),
             Text('Land Size: ${ad.landSize}'),

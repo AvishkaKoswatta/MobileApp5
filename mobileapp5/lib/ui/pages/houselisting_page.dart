@@ -186,12 +186,12 @@ class _HouselistState extends State<Houselist> {
           // House listing
 
           Positioned(
-            top: 270, // Adjust this value based on your needs
+            top: 270, 
             left: 0,
             right: 0,
             bottom: 0,
             child: Container(
-              height: 150, // Adjust this value based on your needs
+              height: 150, 
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Column(

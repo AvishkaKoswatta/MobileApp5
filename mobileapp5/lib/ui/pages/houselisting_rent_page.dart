@@ -22,7 +22,7 @@ class _HouselistState extends State<HouselistRent> {
 
   void loadHousesFromBackend() {
     // Placeholder - Replace this with actual backend logic to fetch houses
-    // For now, using a hardcoded list of houses
+    
     /*
     setState(() {
       houseList = [
@@ -83,14 +83,14 @@ class _HouselistState extends State<HouselistRent> {
                   ),
                   SizedBox(height: 10),
 
-                  // Home Icon with Neumorphic Style
+                  
                   Container(
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Icon(
                         Icons.home,
                         size: 80,
-                        color: Colors.black, // Customize the color as needed
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -100,7 +100,7 @@ class _HouselistState extends State<HouselistRent> {
           ),
 
           Positioned(
-            top: 170, // Adjust this value based on your needs
+            top: 170, 
             left: 4,
             right: 4,
             child: Center(

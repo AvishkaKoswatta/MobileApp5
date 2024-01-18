@@ -54,7 +54,7 @@ class _MyProfileState extends State<MyProfile> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20), // Increase gap between buttons
+                  SizedBox(height: 20), 
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -79,7 +79,7 @@ class _MyProfileState extends State<MyProfile> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20), // Increase gap between buttons
+                  SizedBox(height: 20), 
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -107,7 +107,7 @@ class _MyProfileState extends State<MyProfile> {
                 ],
               ),
             ),
-            SizedBox(height: 40), // Increase gap below the Column
+            SizedBox(height: 40),
           ],
         ),
       ),

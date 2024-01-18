@@ -169,7 +169,7 @@ class _LandPageState extends State<LandAdPage> {
             ),
 
             ElevatedButton(
-              onPressed: postLandData, // Use the postHouseData method
+              onPressed: postLandData, 
               style: ElevatedButton.styleFrom(
                 primary: Color.fromARGB(255, 4, 65, 114),
                 fixedSize: Size(350, 50),
@@ -190,7 +190,7 @@ class _LandPageState extends State<LandAdPage> {
   void postLandData() async {
   List<String> uploadedImageUrls = [];
 
-  // Upload images to Firebase Storage and get their URLs
+ 
   for (XFile imageFile in selectedImages) {
     String imageUrl = await _uploadImageToStorage(imageFile);
     uploadedImageUrls.add(imageUrl);
@@ -222,10 +222,10 @@ Future<String> _uploadImageToStorage(XFile imageFile) async {
   String uniqueId = DateTime.now().millisecondsSinceEpoch.toString();
   Reference storageReference = _storage.ref().child('images/$uniqueId.jpg');
 
-  // Read the content of the image file as bytes
+ 
   List<int> imageBytes = await imageFile.readAsBytes();
 
-  // Upload the bytes to Firebase Storage
+  
   await storageReference.putData(Uint8List.fromList(imageBytes));
 
   // Get the download URL of the uploaded image

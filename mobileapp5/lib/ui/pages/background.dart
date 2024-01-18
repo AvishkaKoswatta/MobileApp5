@@ -30,7 +30,7 @@ class Background extends StatefulWidget {
 class _BackgroundState extends State<Background> {
   @override
   Widget build(BuildContext context) {
-    return HouseShape(); // Replace Placeholder with HouseShape
+    return HouseShape(); 
   }
 }
 
@@ -46,7 +46,7 @@ class HouseShape extends StatelessWidget {
           Container(
             width: 100.0,
             height: 100.0,
-            color: Colors.grey[700], // Ash color
+            color: Colors.grey[700], 
           ),
           // Triangle (roof)
           Positioned(
@@ -56,7 +56,7 @@ class HouseShape extends StatelessWidget {
               width: 50.0,
               height: 50.0,
               decoration: BoxDecoration(
-                color: Colors.grey[700], // Ash color
+                color: Colors.grey[700], 
                 border: Border(
                   left: BorderSide(width: 25.0, color: Colors.transparent),
                   right: BorderSide(width: 25.0, color: Colors.transparent),
